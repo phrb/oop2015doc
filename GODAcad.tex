@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx,url}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fixltx2e}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{geometry}
+\geometry{left=0.7in,right=0.7in,top=1in,bottom=1in}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\lstset{%
+ basicstyle=\small\ttfamily\color{black!85},
+ breaklines = true,
+ keywordstyle=\bfseries\color{black},
+ emphstyle=\color{blue},
+ columns=fullflexible,
+ showstringspaces=false
+}%
+
+\lstdefinelanguage{GODSmalltalk}
+  {keywords={SSSpreadsheetData, SSSheet, SSRow, SSCell},
+  morestring=[b]{'},
+  stringstyle=\color{purple},
+  alsoletter={:}, 
+  emph={new}
+}
+
+% Python environment
+\lstnewenvironment{godCode}[1][]
+{
+\lstset{language=GODSmalltalk,
+    #1}
+}
+{}
+
+
+\graphicspath { {figures/} }
+\setlength{\parindent}{0cm}
+
+\begin{document}
+
+\section{Agregador de informações acadêmicas 2015 (GODAcademics)}
+
+\textbf{Grupo:}\textit{Pedro Bruel, António Martins Miranda, António Castro Júnior}
+
+\textbf{Contato:}phrb@usp.br\\
+
+GOD Academics é um agregador de informações acadêmicas. A partir de um perfil 
+do Google Scholar, esta aplicação constroi um relatório resumindo as 
+informações obtidas de diversas fontes.
+
+Atualmente GOD Academics apenas utiliza como fonte de informação o 
+Google Scholar e o CAPES-Qualis.
+
+\subsection{Texto aqui}
+
+\end{document}
