@@ -61,19 +61,67 @@
 
 \begin{document}
 
-\section{Agregador de informações acadêmicas 2015 (GODAcademics)}
+\section{GODAcademics '15}
 
 \textbf{Grupo:}\textit{Pedro Bruel, António Martins Miranda, António Castro Júnior}
 
-\textbf{Contato:}phrb@usp.br\\
+\textbf{Contato:}\{pedro.bruel, amartmiranda, to.junior.25\}@gmail.com\\
 
 GOD Academics é um agregador de informações acadêmicas. A partir de um perfil 
-do Google Scholar, esta aplicação constroi um relatório resumindo as 
-informações obtidas de diversas fontes.
+do Google Scholar, ou de um currículo Lattes, esta aplicação constrói 
+um relatório resumindo as informações obtidas de diversas fontes.
 
-Atualmente GOD Academics apenas utiliza como fonte de informação o 
-Google Scholar e o CAPES-Qualis.
+\subsection{Objetivos}
 
-\subsection{Texto aqui}
+Os objetivos para o primeiro semestre de 2015 foram:
+
+\begin{itemize}
+    \item Refatoração de Testes;
+    \item Aumentar a Cobertura de Testes;
+    \item Aprimorar a página \emph{web} do projeto;
+    \item Implementar a busca \emph{fuzzy} de texto (distância de Levenshtein);
+    \item Implementar uma interface com o Sistema Lattes.
+\end{itemize}
+
+\subsection{Refatorações e Cobertura de Testes}
+
+
+
+\subsection{Página do Projeto}
+
+Foi implementada uma nova interface para a página \emph{web}
+do GODAcademics. A \emph{Issue} 450 no \emph{redmine} descreve
+alguns pedidos de alterações feitos ao grupo \emph{GODWeb},
+para que nossa implementação pudesse ser utilizada.
+
+Habilitamos as visualizações para as buscas no \emph{Google Scholar}
+e currículo \emph{Lattes}. A busca agora é feita através de um único
+campo, e a distinção entre as fontes é feita baseando-se na assinatura
+do \emph{link} submetido.
+
+\subsection{Busca \emph{Fuzzy}}
+
+Foi implementado um algoritmo para a busca aproximada de texto.
+O algoritmo utilizado foi o cálculo da distância de \emph{Levenshtein},
+que permite calcular distâncias entre \emph{strings} e fazer a busca
+\emph{fuzzy}. Por exemplo, a busca por "\emph{plos comp bio}" deve retornar
+resultados para o \emph{journal} \emph{PLOS Computational Biology}.
+
+Tivemos alguns problemas com a implementação dos testes para esse algoritmo,
+pois o arcabouço de testes para \emph{Smalltalk} utilizado impõe limites
+para a duração dos testes de unidade.
+
+\subsection{Interface com o Sistema Lattes}
+
+Tivemos problemas com o interfaceamento e obtenção de informações
+de Currículos \emph{Lattes}, pois o \emph{site} adotou, recentemente,
+um sistema de \emph{CAPTCHA}. Uma tentativa de contornar esse problema
+foi utilizar o \emph{scriptLattes}, uma ferramenta para obtenção desses dados.
+No entanto, a ferramenta também não funcionou por conta do \emph{CAPTCHA}.
+
+Decidimos então implementar o \emph{parsing} de arquivos html correspondentes
+a perfis do Currículo Lattes. Desta forma, quando for possível contornar as
+restrições impostas pelo sistema, já teremos a estrutura para obtenção de 
+informações sobre os pesquisadores pronta.
 
 \end{document}
