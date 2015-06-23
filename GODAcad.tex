@@ -85,7 +85,9 @@ Os objetivos para o primeiro semestre de 2015 foram:
 
 \subsection{Refatorações e Cobertura de Testes}
 
-
+Adicionamos mais casos de teste para a busca por \emph{strings}
+relativas a conferências e \emph{journals}. Separamos alguns testes
+de unidade que agrupavam vários métodos no mesmo caso de teste.
 
 \subsection{Página do Projeto}
 
@@ -106,6 +108,9 @@ O algoritmo utilizado foi o cálculo da distância de \emph{Levenshtein},
 que permite calcular distâncias entre \emph{strings} e fazer a busca
 \emph{fuzzy}. Por exemplo, a busca por "\emph{plos comp bio}" deve retornar
 resultados para o \emph{journal} \emph{PLOS Computational Biology}.
+
+O método implementado foi \texttt{levenshteinDistanceBetween:and:},
+que recebe duas \emph{strings} e calcula a distância entre elas.
 
 Tivemos alguns problemas com a implementação dos testes para esse algoritmo,
 pois o arcabouço de testes para \emph{Smalltalk} utilizado impõe limites
