@@ -67,8 +67,8 @@
 
 \textbf{Contato:}\{pedro.bruel, amartmiranda, to.junior.25\}@gmail.com\\
 
-GOD Academics é um agregador de informações acadêmicas. A partir de um perfil 
-do Google Scholar, ou de um currículo Lattes, esta aplicação constrói 
+O GODAcademics é um agregador de informações acadêmicas. A partir de um perfil
+do Google Scholar, ou de um currículo Lattes, esta aplicação constroi 
 um relatório resumindo as informações obtidas de diversas fontes.
 
 \subsection{Objetivos}
@@ -128,5 +128,11 @@ Decidimos então implementar o \emph{parsing} de arquivos html correspondentes
 a perfis do Currículo Lattes. Desta forma, quando for possível contornar as
 restrições impostas pelo sistema, já teremos a estrutura para obtenção de 
 informações sobre os pesquisadores pronta.
+
+Criamos a classe \texttt{ACADInput}, que permite a criação de uma entrada
+genérica para o \emph{GODAcademics}. Um objeto \texttt{ACADInput} armazena
+a \emph{url} de um perfil do \emph{Google Scholar} ou Currículo \emph{Lattes},
+e referencia um \emph{handler} que contém informações sobre as \emph{tags html}
+correspondentes ao perfil.
 
 \end{document}
