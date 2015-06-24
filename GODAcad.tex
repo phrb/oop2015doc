@@ -79,7 +79,7 @@ Os objetivos para o primeiro semestre de 2015 foram:
     \item Refatoração de Testes;
     \item Aumentar a Cobertura de Testes;
     \item Aprimorar a página \emph{web} do projeto;
-    \item Implementar a busca \emph{fuzzy} de texto (distância de Levenshtein);
+    \item Implementar a busca \emph{fuzzy} de texto (distância de Levenshtein e cálculo da similaridade);
     \item Implementar uma interface com o Sistema Lattes.
 \end{itemize}
 
@@ -135,6 +135,7 @@ a \emph{url} de um perfil do \emph{Google Scholar} ou Currículo \emph{Lattes},
 e referencia um \emph{handler} que contém informações sobre as \emph{tags html}
 correspondentes ao perfil.
 
+
 \subsection{Trabalhos Futuros}
 
 Seria interessante conseguir contornar o \emph{CAPTCHA} para o acesso ao
@@ -156,6 +157,24 @@ tema de pesquisa no Brasil.
 
 Outra possibilidade poderia envolver a implementação de um \emph{webcrawler}
 para o Sistema \emph{Lattes}, que agregasse informações continuamente sobre
-os currículos.
+os currículos.\\
+
+Algumas correcções e otimimazões a serem levadas em conta:
+\begin{itemize}
+	\item na home do \emph{GODAcademics}, validar os campo para a inserção de links; 
+	\item melhorar eficência  do atual algoritmo \emph{fuzzy} (cálcula da similaridade entre duas strings por meio da distância do  \emph{Levenshtein}) ou implementar outra estratégia de busca \emph{fuzzy} mais elaborada(algoritmos do Smith–Waterman, Needleman–Wunsch,Jaro–Winkler, etc);
+	\item aumentar a precisão do \emph{Levenshtein}, fazendo um tratamento mais rigoroso das strings a serem comparadas ;
+	\item estudar e determinar qual a melhor porcentagem de similaridade a ser usado como critério de aceitação ou não entre duas strings; 
+	\item implementar mais tags para o \emph{Lattes}, como por exemplo, nível de produtividade;
+\end{itemize}
+
+\subsection{Diagrama de classes}
+
+A seguir apresntamos o diagrama de classes (final) do \emph{GODAcademics} após as alterções:
+
+\begin{figure}[b]
+\centering
+\includegraphics[width=1.3\textwidth, height=1\textwidth, angle =-90 ]{GODAcad}
+\end{figure}
 
 \end{document}
